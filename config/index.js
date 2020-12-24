@@ -1,3 +1,7 @@
+const path = require('path')
+function resolve(url) {
+  return path.resolve(__dirname, '..', url)
+}
 const config = {
   projectName: 'Taro3-issues-code',
   date: '2020-12-24',
@@ -8,23 +12,35 @@ const config = {
     828: 1.81 / 2
   },
   sourceRoot: 'src',
-  outputRoot: 'dist',
+  outputRoot: `dist/${process.env.TARO_ENV}`,//实现多端同步调试
   plugins: [],
   defineConstants: {
   },
   copy: {
     patterns: [
+      { from: 'src/components/vant-weapp/dist/wxs', to: `dist/${process.env.TARO_ENV}/components/vant-weapp/dist/wxs` },
+      { from: 'src/components/vant-weapp/dist/icon/index.wxs', to: `dist/${process.env.TARO_ENV}/components/vant-weapp/dist/icon/index.wxs` },
+      { from: 'src/components/vant-weapp/dist/popup/index.wxs', to: `dist/${process.env.TARO_ENV}/components/vant-weapp/dist/popup/index.wxs` },
+      { from: 'src/components/vant-weapp/dist/tree-select/index.wxs', to: `dist/${process.env.TARO_ENV}/components/vant-weapp/dist/tree-select/index.wxs` },
+      { from: 'src/components/vant-weapp/dist/picker-column/index.wxs', to: `dist/${process.env.TARO_ENV}/components/vant-weapp/dist/picker-column/index.wxs` },
     ],
     options: {
     }
   },
   framework: 'vue3',
+  alias: {
+    '@/assets': resolve('src/assets'),
+    '@/components': resolve('src/components'),
+    '@/constants': resolve('src/constants'),
+    '@/styles': resolve('src/styles'),
+    '@/utils': resolve('src/utils'),
+  },
   mini: {
     postcss: {
       pxtransform: {
         enable: true,
         config: {
-
+          selectorBlackList: [/van-/]
         }
       },
       url: {
