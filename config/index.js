@@ -15,6 +15,7 @@ const config = {
   outputRoot: `dist/${process.env.TARO_ENV}`,//实现多端同步调试
   plugins: [],
   defineConstants: {
+    __MY__: JSON.stringify('my')
   },
   copy: {
     patterns: [

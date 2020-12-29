@@ -46,6 +46,8 @@ export default {
       },
     ];
 
+    console.log("__MY__ value: ", __MY__);
+
     function onClickNav() {
       console.log("do onClickNav");
     }
