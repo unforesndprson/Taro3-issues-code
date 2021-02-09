@@ -19,11 +19,7 @@ const config = {
   },
   copy: {
     patterns: [
-      { from: 'src/components/vant-weapp/dist/wxs', to: `dist/${process.env.TARO_ENV}/components/vant-weapp/dist/wxs` },
-      { from: 'src/components/vant-weapp/dist/icon/index.wxs', to: `dist/${process.env.TARO_ENV}/components/vant-weapp/dist/icon/index.wxs` },
-      { from: 'src/components/vant-weapp/dist/popup/index.wxs', to: `dist/${process.env.TARO_ENV}/components/vant-weapp/dist/popup/index.wxs` },
-      { from: 'src/components/vant-weapp/dist/tree-select/index.wxs', to: `dist/${process.env.TARO_ENV}/components/vant-weapp/dist/tree-select/index.wxs` },
-      { from: 'src/components/vant-weapp/dist/picker-column/index.wxs', to: `dist/${process.env.TARO_ENV}/components/vant-weapp/dist/picker-column/index.wxs` },
+     
     ],
     options: {
     }
@@ -41,7 +37,7 @@ const config = {
       pxtransform: {
         enable: true,
         config: {
-          selectorBlackList: [/van-/]
+       
         }
       },
       url: {

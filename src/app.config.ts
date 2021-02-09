@@ -2,6 +2,20 @@ export default {
   pages: [
     'pages/index/index'
   ],
+  "subpackages": [//分包
+    {
+      "root": "packageSecond",
+      "pages": [
+        'pages/second/index',
+      ],
+    }
+  ],
+  // "preloadRule": {
+  //   "pages/index": {
+  //     "network": "all",
+  //     "packages": ["packageSecond"]
+  //   },
+  // },
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
