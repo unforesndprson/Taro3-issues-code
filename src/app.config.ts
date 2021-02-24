@@ -2,7 +2,7 @@ export default {
   pages: [
     'pages/index/index'
   ],
-  "subpackages": [//分包
+  "subPackages": [//分包
     {
       "root": "packageSecond",
       "pages": [
